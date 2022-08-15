@@ -1,0 +1,12 @@
+objective:
+  - Sparse Support Recovery
+
+dataset: # dataset to run benchmark on
+  - simulated[n_samples=100,n_features=50,density=0.1,rho=0.3]
+
+solver: # list of example solvers to do benchmark
+  - celer[0.1,0.01,0.001]
+
+# note: use more repetitions to have quantiles on the plot
+n-repetitions: 1
+max-runs: 20
