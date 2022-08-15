@@ -7,9 +7,9 @@ Benchopt is a package to simplify and make more transparent and
 reproducible the comparisons of optimization algorithms.
 The Lasso consists in solving the following program:
 
-$$ \\min_{\|w\|_0 \le k } \\, \\tfrac{1}{2} \\Vert y - Xw \\Vert^2_2$$
+$$ \\min_{\|w\|_0 \\le K } \\, \\tfrac{1}{2} \\Vert y - Xw \\Vert^2_2$$
 
-where $n$ (or n_samples) stands for the number of samples, $p$ (or n_features) stands for the number of features, $k$ is the number of non-zero element of $w$ and
+where $n$ (or n_samples) stands for the number of samples, $p$ (or n_features) stands for the number of features, $K$ is the number of non-zero element of $w$ and
 
 $$ y \\in \\mathbb{R}^n, \\, \\, X \\in \\mathbb{R}^{n \\times p} $$
 
@@ -29,7 +29,7 @@ To demonstrate the use of benchopt, one can run, from the `benchmark_sparse_supp
 
 .. code-block::
 
-   $ benchopt install . -s sklearn -s python-pgd --env
+   $ benchopt install . -s celer --env
    $ benchopt run . --config example_config.yml --env
 
 Alternatively, one can use the command line interface to select which problems, datasets and solvers are used:
