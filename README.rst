@@ -22,7 +22,7 @@ This benchmark can be run using the following commands:
 .. code-block::
 
    $ pip install -U benchopt
-   $ git clone https://github.com/benchopt/benchmark_sparse_support_recovery
+   $ git clone https://github.com/tomMoral/benchmark_sparse_support_recovery
    $ cd benchmark_sparse_support_recovery/
 
 To demonstrate the use of benchopt, one can run, from the `benchmark_sparse_support_recovery` folder:
@@ -58,7 +58,7 @@ If issues persist, you can also try running the benchmark in local mode with the
 
 Note that in this case, only solvers which dependencies are installed in the current env will be run.
 
-.. |Build Status| image:: https://github.com/benchopt/benchmark_sparse_support_recovery/workflows/Tests/badge.svg
-   :target: https://github.com/benchopt/benchmark_sparse_support_recovery/actions
+.. |Build Status| image:: https://github.com/tomMoral/benchmark_sparse_support_recovery/workflows/Tests/badge.svg
+   :target: https://github.com/tomMoral/benchmark_sparse_support_recovery/actions
 .. |Python 3.6+| image:: https://img.shields.io/badge/python-3.6%2B-blue
    :target: https://www.python.org/downloads/release/python-360/
