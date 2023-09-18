@@ -8,15 +8,16 @@ class Objective(BaseObjective):
     name = "Sparse Support Recovery"
 
     is_convex = False
+    min_benchopt_version = "1.5.0"
 
     def set_data(self, X, y, w_true):
         self.X, self.y, self.w_true = X, y, w_true
         self.n_features = self.X.shape[1]
 
-    def get_one_solution(self):
-        return np.zeros(self.n_features)
+    def get_one_result(self):
+        return {'beta': np.zeros(self.n_features)}
 
-    def compute(self, beta):
+    def evaluate_result(self, beta):
         beta = beta.astype(np.float64)  # avoid float32 numerical errors
         support_beta = beta != 0
         K_beta = max(1, support_beta.sum())
@@ -36,9 +37,8 @@ class Objective(BaseObjective):
             res['acc'] = (support_beta == support_true).mean()
             res['precision'] = (support_beta * support_true).sum() / K_beta
             res['recall'] = (support_beta * support_true).sum() / K_true
-            print(res, K_true, K_beta)
 
         return res
 
-    def to_dict(self):
+    def get_objective(self):
         return dict(X=self.X, y=self.y)
