@@ -56,7 +56,7 @@ class Solver(BaseSolver):
         return w
 
     def get_result(self):
-        return self.w
+        return {'beta': self.w}
 
     def compute_lipschitz_constant(self):
         if not sparse.issparse(self.X):

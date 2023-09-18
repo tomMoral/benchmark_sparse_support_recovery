@@ -54,7 +54,7 @@ class Solver(BaseSolver):
         return previous + 1
 
     def get_result(self):
-        return self.coef
+        return {'beta': self.coef}
 
     def _get_lambda_max(self):
         return abs(self.X.T.dot(self.y)).max()
