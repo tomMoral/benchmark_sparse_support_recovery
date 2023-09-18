@@ -10,7 +10,6 @@ class Objective(BaseObjective):
     is_convex = False
     min_benchopt_version = "1.5.0"
 
-
     def set_data(self, X, y, w_true):
         self.X, self.y, self.w_true = X, y, w_true
         self.n_features = self.X.shape[1]
